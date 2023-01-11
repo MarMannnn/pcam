@@ -10,7 +10,7 @@ def CreateModel():
         layers.Conv2D(16, 3, padding='same', strides=(2,2),activation='relu', kernel_initializer='glorot_uniform'),
         layers.Conv2D(16, 3, padding='same', strides=(2,2),activation='relu', kernel_initializer='glorot_uniform'),
         layers.MaxPooling2D(),
-        layers.Dropout(),
+        layers.Dropout(0.1),
         
         layers.Conv2D(32, 3, padding='same', strides=(2,2),activation='relu', kernel_initializer='glorot_uniform'),
         layers.Conv2D(32, 3, padding='same', strides=(2,2),activation='relu', kernel_initializer='glorot_uniform'),
@@ -24,7 +24,7 @@ def CreateModel():
         
         layers.Flatten(),
         layers.Dense(128, activation='relu'),
-        layers.Dropout(),
+        layers.Dropout(0.1),
 
         layers.Dense(1, activation='softmax')
     ])
