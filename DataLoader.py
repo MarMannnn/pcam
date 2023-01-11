@@ -42,12 +42,12 @@ def DataLoader():
     y_valid = h5py.File('valid_y.h5', 'r')['y']
 
     # 
-    x_train = np.asarray(x_train)
-    x_test = np.asarray(x_test)
-    x_valid = np.asarray(x_valid)
+    x_train = np.asarray(x_train).astype('float32')
+    x_test = np.asarray(x_test).astype('float32')
+    x_valid = np.asarray(x_valid).astype('float32')
 
-    y_train = np.asarray(y_train)
-    y_test = np.asarray(y_test)
-    y_valid = np.asarray(y_valid)   
+    y_train = np.asarray(y_train).astype('float32')
+    y_test = np.asarray(y_test).astype('float32')
+    y_valid = np.asarray(y_valid).astype('float32')  
     
     return (x_train, y_train, x_test, y_test, x_valid, y_valid)
