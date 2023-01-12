@@ -9,18 +9,17 @@ from keras import Sequential
 from tensorflow.keras.callbacks import EarlyStopping as es
 import tensorflow as tf
 
+DataLoader.DataLoader()
+
 #dataset
 x_train = h5py.File('train_x.h5', 'r')['x']
 y_train = h5py.File('train_y.h5', 'r')['y']
-
 x_test = h5py.File('test_x.h5', 'r')['x']
 y_test = h5py.File('test_y.h5', 'r')['y']
 
 x_valid = h5py.File('valid_x.h5', 'r')['x']
 y_valid = h5py.File('valid_y.h5', 'r')['y']
 
-
-    # 
 x_train = np.asarray(x_train).astype('float32')
 x_test = np.asarray(x_test).astype('float32')
 x_valid = np.asarray(x_valid).astype('float32')
