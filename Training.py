@@ -2,6 +2,7 @@ import DataLoader
 import Model
 import numpy as np
 import tensorflow as tf
+import h5py
 from tensorflow import keras
 from keras import layers
 from keras import Sequential
@@ -9,10 +10,24 @@ from tensorflow.keras.callbacks import EarlyStopping as es
 import tensorflow as tf
 
 #dataset
-x_train, y_train, x_test, y_test, x_valid, y_valid = DataLoader.DataLoader()
-y_train = np.reshape(y_train, (len(y_train), 1))
-y_test = np.reshape(y_test, (len(y_test), 1))
-y_valid = np.reshape(y_valid, (len(y_valid), 1))
+x_train = h5py.File('train_x.h5', 'r')['x']
+y_train = h5py.File('train_y.h5', 'r')['y']
+
+x_test = h5py.File('test_x.h5', 'r')['x']
+y_test = h5py.File('test_y.h5', 'r')['y']
+
+x_valid = h5py.File('valid_x.h5', 'r')['x']
+y_valid = h5py.File('valid_y.h5', 'r')['y']
+
+
+    # 
+x_train = np.asarray(x_train).astype('float32')
+x_test = np.asarray(x_test).astype('float32')
+x_valid = np.asarray(x_valid).astype('float32')
+
+y_train = np.asarray(y_train).astype('float32')
+y_test = np.asarray(y_test).astype('float32')
+y_valid = np.asarray(y_valid).astype('float32')  
 
 #model and params
 model = Model.CreateModel()
