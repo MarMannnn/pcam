@@ -3,5 +3,5 @@
 private project for image classification 
 trained on patch camelyon database
 
-- DataLoader.py -> prepare the dataset
+- DataLoader.py -> downloading the dataset
 - Model.py -> create the model and setting of the hyperparams
