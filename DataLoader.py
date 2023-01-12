@@ -30,7 +30,7 @@ def DataLoader():
     
     yv = 'https://drive.google.com/uc?export=download&id=1bH8ZRbhSVAhScTS0p9-ZzGnX91cHT3uO'
     o_yv = 'valid_y.h5.gz'
-    gdown.download(yte, o_yte, quiet=False)
+    gdown.download(yv, o_yv, quiet=False)
     
     
     #unzip
